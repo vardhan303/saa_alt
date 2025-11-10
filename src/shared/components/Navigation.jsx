@@ -61,7 +61,7 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <div className="flex items-center">
             <Link to="/" className="text-xl font-bold text-text-primary">
-              SAA Alt
+              Hackathon Manager
             </Link>
           </div>
           <div className="flex-1" />
