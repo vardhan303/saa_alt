@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/health",
+      "destination": "/api/serverless"
+    },
+    {
+      "source": "/debug/:path*",
+      "destination": "/api/serverless"
+    },
+    {
+      "source": "/auth/:path*",
+      "destination": "/api/serverless"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/api/serverless"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}

@@ -144,14 +144,27 @@ app.use('/api/registrations', registrationsRouter);
 app.use('/api/devpost', devpostRouter);
 
 // Initialize MongoDB connection
-connectMongo().then(() => {
-  // Initialize socket.io server
-  initSocket(server);
-  server.listen(PORT, () => {
-    console.log(`Auth server running on http://localhost:${PORT}`);
-    console.log(`Socket.io running on http://localhost:${PORT}`);
+if (process.env.VERCEL) {
+  // In Vercel, export the app directly for serverless
+  connectMongo().then(() => {
+    console.log('MongoDB connected in Vercel serverless environment');
+  }).catch(err => {
+    console.error('MongoDB connection failed:', err);
   });
-}).catch(err => {
-  console.error('Failed to start server:', err);
-  process.exit(1);
-});
+} else {
+  // Local development - run server normally
+  connectMongo().then(() => {
+    // Initialize socket.io server
+    initSocket(server);
+    server.listen(PORT, () => {
+      console.log(`Auth server running on http://localhost:${PORT}`);
+      console.log(`Socket.io running on http://localhost:${PORT}`);
+    });
+  }).catch(err => {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  });
+}
+
+// Export for Vercel serverless
+export default app;

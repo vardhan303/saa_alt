@@ -8,6 +8,7 @@
     "dev:server": "node server/index.js",
     "dev:full": "concurrently \"npm:dev\" \"npm:dev:server\"",
     "build": "vite build",
+    "vercel-build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.jsx",
     "test": "echo \"(no tests yet)\""
