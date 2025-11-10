@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../features/auth/hooks/useAuth';
 import { Card, Button, Pill } from '../../shared/ui';
 import Table from '../../shared/ui/Table';
 import { adminService } from '../../services/adminService';
 
 const AdminPage = () => {
-    const [adminUser, setAdminUser] = useState(null);
+    const { user, logout } = useAuth();
     const [users, setUsers] = useState([]);
     const [page, setPage] = useState(1);
     const [limit] = useState(10);
@@ -15,25 +16,15 @@ const AdminPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if admin is authenticated
-        const isAdminAuth = localStorage.getItem('adminAuth');
-        const adminUserData = localStorage.getItem('adminUser');
-
-        if (!isAdminAuth || isAdminAuth !== 'true') {
-            // Redirect to admin login if not authenticated
-            navigate('/admin/login');
+        // Check if user is admin
+        if (!user || !user.roles || !user.roles.includes('admin')) {
+            navigate('/login');
             return;
         }
-
-        if (adminUserData) {
-            setAdminUser(JSON.parse(adminUserData));
-        }
-    }, [navigate]);
+    }, [user, navigate]);
 
     const handleLogout = () => {
-        localStorage.removeItem('adminAuth');
-        localStorage.removeItem('adminUser');
-        navigate('/login');
+        logout();
     };
 
     const fetchUsers = async (targetPage = 1) => {
@@ -106,7 +97,7 @@ const AdminPage = () => {
         }
     };
 
-    if (!adminUser) {
+    if (!user) {
         return (
             <div className="min-h-screen flex items-center justify-center bg-bg">
                 <Card className="max-w-md mx-auto">
