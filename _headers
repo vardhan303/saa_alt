@@ -1,5 +1,0 @@
-/dist/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/dist/index.html
-  Cache-Control: public, max-age=0, must-revalidate
