@@ -1,0 +1,96 @@
+/* Dark-only global styles
+   Notion/GitHub hybrid removed — single-source dark theme.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------
+   DESIGN TOKENS (dark-only)
+   All UI colors as CSS vars (single source of truth)
+   ------------------------- */
+:root {
+  /* --- Primary / accents --- */
+  --color-primary: #58a6ff;
+  --color-primary-600: #2f8edf;
+  --color-accent: #7c3aed;
+
+  /* --- Backgrounds / Surfaces (GitHub-ish dark) --- */
+  --color-bg: #0b1220;
+  --color-bg-2: #0d1117;
+  --color-surface: #0d1117;
+  --color-surface-2: #08101a;
+
+  /* --- Text --- */
+  --color-text-primary: #c9d1d9;
+  --color-text-muted: #8b949e;
+
+  /* --- Borders / dividers --- */
+  --color-border: #30363d;
+
+  /* --- Code & UI specific --- */
+  --color-code-bg: #0b1220;
+  --color-shadow: rgba(2,6,23,0.5);
+
+  /* --- Semantic --- */
+  --color-success: #3fb950;
+  --color-danger: #ff7b72;
+
+  /* Spacing tokens (optional convenience) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+
+  /* Focus ring */
+  --focus-ring: 3px;
+
+  /* Accessibility hint for browsers */
+  color-scheme: dark;
+}
+
+/* minimal container utility */
+.container-max {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* sensible base resets & accessible focus */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* accessible focus */
+:where(:focus) {
+  outline: none;
+}
+:where(:focus-visible) {
+  box-shadow: 0 0 0 var(--focus-ring) rgba(88,166,255,0.12);
+  border-radius: 6px;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* small helpers (keep or remove if unused) */
+.theme-toggle {
+  cursor: pointer;
+}

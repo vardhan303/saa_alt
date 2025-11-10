@@ -1,0 +1,269 @@
+/* OrbitProgress Component Styles */
+.orbit-progress {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Track Disc Variant */
+.orbit-track-disc {
+  animation: orbit-rotate var(--orbit-duration, 2s) var(--orbit-easing, linear) infinite;
+}
+
+.orbit-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.orbit-element {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-element-1 {
+  animation: orbit-counter-rotate var(--orbit-duration, 2s) var(--orbit-easing, linear) infinite;
+}
+
+.orbit-element-2 {
+  animation: orbit-counter-rotate calc(var(--orbit-duration, 2s) * 1.5) var(--orbit-easing, linear) infinite;
+  transform: scale(0.7);
+}
+
+.orbit-element-3 {
+  animation: orbit-counter-rotate calc(var(--orbit-duration, 2s) * 2) var(--orbit-easing, linear) infinite;
+  transform: scale(0.4);
+}
+
+.orbit-disc {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: currentColor;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 6px currentColor;
+}
+
+.orbit-disc-small {
+  width: 3px;
+  height: 3px;
+  top: -1.5px;
+}
+
+.orbit-disc-tiny {
+  width: 2px;
+  height: 2px;
+  top: -1px;
+  opacity: 0.7;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  height: 25%;
+}
+
+.orbit-center-disc {
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: orbit-pulse calc(var(--orbit-duration, 2s) * 0.5) var(--orbit-easing, ease-in-out) infinite alternate;
+}
+
+/* Spinner Variant */
+.orbit-spinner {
+  animation: orbit-rotate var(--orbit-duration, 2s) var(--orbit-easing, linear) infinite;
+}
+
+.orbit-spinner-ring {
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* Pulse Variant */
+.orbit-pulse {
+  position: relative;
+}
+
+.orbit-pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.orbit-pulse-ring-1 {
+  animation: orbit-pulse-wave var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+}
+
+.orbit-pulse-ring-2 {
+  animation: orbit-pulse-wave var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+  animation-delay: calc(var(--orbit-duration, 2s) * 0.33);
+}
+
+.orbit-pulse-ring-3 {
+  animation: orbit-pulse-wave var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+  animation-delay: calc(var(--orbit-duration, 2s) * 0.66);
+}
+
+/* Dots Variant */
+.orbit-dots {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.orbit-dot {
+  width: 20%;
+  height: 20%;
+  background-color: currentColor;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.orbit-dot-1 {
+  animation: orbit-dot-bounce var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+}
+
+.orbit-dot-2 {
+  animation: orbit-dot-bounce var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+  animation-delay: calc(var(--orbit-duration, 2s) * 0.33);
+}
+
+.orbit-dot-3 {
+  animation: orbit-dot-bounce var(--orbit-duration, 2s) var(--orbit-easing, ease-in-out) infinite;
+  animation-delay: calc(var(--orbit-duration, 2s) * 0.66);
+}
+
+/* Keyframe Animations */
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-counter-rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes orbit-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+}
+
+@keyframes orbit-pulse-wave {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes orbit-dot-bounce {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+/* Size-specific adjustments */
+.orbit-progress.w-6.h-6 .orbit-disc {
+  width: 2px;
+  height: 2px;
+  top: -1px;
+}
+
+.orbit-progress.w-6.h-6 .orbit-disc-small {
+  width: 1.5px;
+  height: 1.5px;
+  top: -0.75px;
+}
+
+.orbit-progress.w-6.h-6 .orbit-disc-tiny {
+  width: 1px;
+  height: 1px;
+  top: -0.5px;
+}
+
+.orbit-progress.w-12.h-12 .orbit-disc {
+  width: 6px;
+  height: 6px;
+  top: -3px;
+}
+
+.orbit-progress.w-12.h-12 .orbit-disc-small {
+  width: 4px;
+  height: 4px;
+  top: -2px;
+}
+
+.orbit-progress.w-12.h-12 .orbit-disc-tiny {
+  width: 3px;
+  height: 3px;
+  top: -1.5px;
+}
+
+.orbit-progress.w-16.h-16 .orbit-disc {
+  width: 8px;
+  height: 8px;
+  top: -4px;
+}
+
+.orbit-progress.w-16.h-16 .orbit-disc-small {
+  width: 6px;
+  height: 6px;
+  top: -3px;
+}
+
+.orbit-progress.w-16.h-16 .orbit-disc-tiny {
+  width: 4px;
+  height: 4px;
+  top: -2px;
+}

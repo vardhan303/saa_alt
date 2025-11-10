@@ -1,0 +1,15 @@
+.nav-morph {
+  transition-property: width, max-width, background-color, backdrop-filter, box-shadow, border-color, border-radius, transform, top, left, right, padding;
+  transition-duration: 420ms;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+}
+.nav-morph.island {
+  /* Slight initial scale for subtle presence */
+  transform: translate(-50%, 0) scale(0.995);
+}
+.nav-morph.scrolled {
+  transform: translate(0,0) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-morph { transition: none; }
+}

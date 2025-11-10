@@ -1,0 +1,215 @@
+{
+  "hackathons": [
+    {
+      "id": 24901,
+      "title": "RevenueCat Shipaton 2025",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/488/891/datas/medium_square.png",
+      "analytics_identifier": "RevenueCat Shipaton 2025 (24901)",
+      "url": "https://revenuecat-shipaton-2025.devpost.com/",
+      "time_left_to_submission": "16 days left",
+      "submission_period_dates": "Jul 31 - Oct 01, 2025",
+      "themes": [
+        {
+          "id": 18,
+          "name": "Design"
+        },
+        {
+          "id": 26,
+          "name": "Mobile"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>355,000</span>",
+      "prizes_counts": {
+        "cash": 29,
+        "other": 1
+      },
+      "registrations_count": 50695,
+      "featured": true,
+      "organization_name": "RevenueCat",
+      "winners_announced": false,
+      "submission_gallery_url": "https://revenuecat-shipaton-2025.devpost.com/project-gallery",
+      "start_a_submission_url": "https://revenuecat-shipaton-2025.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    },
+    {
+      "id": 25444,
+      "title": "Code with Kiro Hackathon",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/505/605/datas/medium_square.png",
+      "analytics_identifier": "Code with Kiro Hackathon (25444)",
+      "url": "https://kiro.devpost.com/",
+      "time_left_to_submission": "about 15 hours left",
+      "submission_period_dates": "Jul 14 - Sep 15, 2025",
+      "themes": [
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 22,
+          "name": "Open Ended"
+        },
+        {
+          "id": 23,
+          "name": "Beginner Friendly"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>100,000</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 0
+      },
+      "registrations_count": 10055,
+      "featured": false,
+      "organization_name": "Kiro",
+      "winners_announced": false,
+      "submission_gallery_url": "https://kiro.devpost.com/project-gallery",
+      "start_a_submission_url": "https://kiro.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": true
+    },
+    {
+      "id": 25777,
+      "title": "Tableau Next Virtual Hackathon",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/619/249/datas/medium_square.png",
+      "analytics_identifier": "Tableau Next Virtual Hackathon (25777)",
+      "url": "https://tableau.devpost.com/",
+      "time_left_to_submission": "8 days left",
+      "submission_period_dates": "Jul 24 - Sep 22, 2025",
+      "themes": [
+        {
+          "id": 28,
+          "name": "Databases"
+        },
+        {
+          "id": 21,
+          "name": "Enterprise"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>45,000</span>",
+      "prizes_counts": {
+        "cash": 4,
+        "other": 1
+      },
+      "registrations_count": 4356,
+      "featured": true,
+      "organization_name": "Tableau",
+      "winners_announced": false,
+      "submission_gallery_url": "https://tableau.devpost.com/project-gallery",
+      "start_a_submission_url": "https://tableau.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": true
+    },
+    {
+      "id": 25843,
+      "title": "GKE Turns 10 Hackathon",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/658/082/datas/medium_square.png",
+      "analytics_identifier": "GKE Turns 10 Hackathon (25843)",
+      "url": "https://gketurns10.devpost.com/",
+      "time_left_to_submission": "8 days left",
+      "submission_period_dates": "Aug 18 - Sep 22, 2025",
+      "themes": [
+        {
+          "id": 17,
+          "name": "Low/No Code"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 22,
+          "name": "Open Ended"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>50,000</span>",
+      "prizes_counts": {
+        "cash": 1,
+        "other": 0
+      },
+      "registrations_count": 4346,
+      "featured": false,
+      "organization_name": "Google",
+      "winners_announced": false,
+      "submission_gallery_url": "https://gketurns10.devpost.com/project-gallery",
+      "start_a_submission_url": "https://gketurns10.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": true
+    },
+    {
+      "id": 25614,
+      "title": "TiDB AgentX Hackathon 2025",
+      "displayed_location": {
+        "icon": "globe",
+        "location": "Online"
+      },
+      "open_state": "open",
+      "thumbnail_url": "//d112y698adiu2z.cloudfront.net/photos/production/challenge_thumbnails/003/649/209/datas/medium_square.jpeg",
+      "analytics_identifier": "TiDB AgentX Hackathon 2025 (25614)",
+      "url": "https://tidb-2025-hackathon.devpost.com/",
+      "time_left_to_submission": "1 day left",
+      "submission_period_dates": "Aug 01 - Sep 16, 2025",
+      "themes": [
+        {
+          "id": 28,
+          "name": "Databases"
+        },
+        {
+          "id": 6,
+          "name": "Machine Learning/AI"
+        },
+        {
+          "id": 29,
+          "name": "Serverless"
+        }
+      ],
+      "prize_amount": "$<span data-currency-value>30,500</span>",
+      "prizes_counts": {
+        "cash": 7,
+        "other": 0
+      },
+      "registrations_count": 2683,
+      "featured": false,
+      "organization_name": "TiDB",
+      "winners_announced": false,
+      "submission_gallery_url": "https://tidb-2025-hackathon.devpost.com/project-gallery",
+      "start_a_submission_url": "https://tidb-2025-hackathon.devpost.com/challenges/start_a_submission",
+      "invite_only": false,
+      "eligibility_requirement_invite_only_description": null,
+      "managed_by_devpost_badge": false
+    }
+  ],
+  "meta": {
+    "total_count": 11480,
+    "per_page": 5,
+    "fuzzy": false
+  }
+}

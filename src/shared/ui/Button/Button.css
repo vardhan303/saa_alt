@@ -1,0 +1,32 @@
+/* Button ripple animation styles */
+@keyframes button-ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.button-ripple {
+  animation: button-ripple 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Enhanced button animations */
+@keyframes button-press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-press-animation {
+  animation: button-press 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
