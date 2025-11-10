@@ -3,9 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../features/auth/hooks/useAuth';
 import { OrbitProgress } from '../shared/ui';
 import LoginForm from '../features/auth/components/LoginForm';
-import AdminLogin from '../features/auth/components/AdminLogin';
 import ProtectedRoute from '../features/auth/components/ProtectedRoute';
-// import DashboardPage from '../pages/Dashboard';
 import ProfilePage from '../pages/Profile';
 import HackathonManagement from '../pages/Hackathons';
 import ParticipantDashboard from '../pages/Hackathons/ParticipantDashboard';
@@ -36,8 +34,14 @@ export default function AppRoutes() {
       />
       
       {/* Admin Routes */}
-      <Route path="/admin/login" element={<AdminLogin />} />
-      <Route path="/admin" element={<AdminPage />} />
+      <Route 
+        path="/admin" 
+        element={
+          <ProtectedRoute fallback={<Navigate to="/login" replace />}>
+            <AdminPage />
+          </ProtectedRoute>
+        } 
+      />
       
       {/* Protected Routes */}
       <Route 

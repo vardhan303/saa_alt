@@ -1,15 +1,56 @@
-import React from 'react';
-import { Button, Card, GoogleIcon } from '../../../shared/ui';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button, Card, Input } from '../../../shared/ui';
 
-// With Vite proxy configured, we can use relative URLs
-const API_BASE = '';
+// Static credentials for easy demo setup
+const DEMO_USERS = [
+    { username: 'user', password: 'password', role: 'participant', displayName: 'Demo User' },
+    { username: 'admin', password: 'admin123', role: 'admin', displayName: 'Admin User' }
+];
 
 export default function LoginForm() {
-    const handleGoogle = () => {
-        // Store the intended redirect URL before OAuth
-        const returnTo = new URLSearchParams(window.location.search).get('returnTo') || '/';
-        sessionStorage.setItem('authReturnTo', returnTo);
-        window.location.href = `${API_BASE}/auth/google`;
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+
+        // Check against static credentials
+        const user = DEMO_USERS.find(u => u.username === username && u.password === password);
+        
+        if (user) {
+            // Store user session in localStorage
+            const userSession = {
+                id: user.username,
+                sub: user.username,
+                displayName: user.displayName,
+                name: user.displayName,
+                roles: [user.role],
+                username: user.username
+            };
+            
+            localStorage.setItem('auth_user', JSON.stringify(userSession));
+            localStorage.setItem('auth_token', 'demo-token-' + Date.now());
+            
+            // Redirect based on role
+            if (user.role === 'admin') {
+                navigate('/admin');
+            } else {
+                navigate('/');
+            }
+            
+            // Trigger page reload to update auth context
+            window.location.reload();
+        } else {
+            setError('Invalid username or password');
+        }
+        
+        setLoading(false);
     };
 
     return (
@@ -23,29 +64,51 @@ export default function LoginForm() {
                 </Card.Header>
                 
                 <Card.Content>
-                    <Button
-                        variant="secondary"
-                        size="lg"
-                        onClick={handleGoogle}
-                        className="w-full flex items-center justify-center gap-3"
-                    >
-                        <GoogleIcon className="w-5 h-5" />
-                        Continue With Google
-                    </Button>
+                    <form onSubmit={handleSubmit} className="space-y-6 py-2">
+                        {error && (
+                            <Card className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-2">
+                                <Card.Content>{error}</Card.Content>
+                            </Card>
+                        )}
+                        <div className="space-y-4">
+                            <Input
+                                id="username"
+                                name="username"
+                                type="text"
+                                required
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                placeholder="Username"
+                                label="Username"
+                                className="w-full px-3 py-2"
+                            />
+                            <Input
+                                id="password"
+                                name="password"
+                                type="password"
+                                required
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Password"
+                                label="Password"
+                                className="w-full px-3 py-2"
+                            />
+                        </div>
+                        <Button
+                            type="submit"
+                            size="lg"
+                            disabled={loading}
+                            className="w-full"
+                        >
+                            {loading ? 'Signing in...' : 'Sign In'}
+                        </Button>
+                    </form>
                 </Card.Content>
 
                 <Card.Footer>
                     <p className="text-xs text-text-muted text-center">
-                        By signing in, you agree to our Terms of Service and Privacy Policy.
+                        Demo credentials: user/password or admin/admin123
                     </p>
-                    <div className="text-center mt-3">
-                        <a 
-                            href="/admin/login" 
-                            className="text-xs text-blue-600 hover:text-blue-800 underline"
-                        >
-                            Admin Login
-                        </a>
-                    </div>
                 </Card.Footer>
             </Card>
         </div>

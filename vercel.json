@@ -1,22 +1,6 @@
 {
   "rewrites": [
     {
-      "source": "/health",
-      "destination": "/api/serverless"
-    },
-    {
-      "source": "/debug/:path*",
-      "destination": "/api/serverless"
-    },
-    {
-      "source": "/auth/:path*",
-      "destination": "/api/serverless"
-    },
-    {
-      "source": "/api/:path*",
-      "destination": "/api/serverless"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
